@@ -63,9 +63,10 @@ const observer = new IntersectionObserver(
       }
     });
   },
-  { threshold: 0.6 },
+  { threshold: 0.15 },
 );
 
 document.querySelectorAll(".split, .reveal").forEach((el) => {
   observer.observe(el);
 });
+

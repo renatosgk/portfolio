@@ -2,18 +2,29 @@
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    <title>Renato Kenji • Portfolio</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Renato Kenji • Portfolio</title>
 
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
 
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <div class="parallax-bg"></div>
+    
     <div class="grain"></div>
+
+    <header class ="top-header">
+      <nav class="nav-menu">
+          <a href="#work" class = "nav-link">projetos</a></li>
+          <a href="#about" class = "nav-link">sobre</a></li>
+          <a href="#contact" class = "nav-link">contato</a></l>
+      </nav>
+    </header>
 
     <main>
       <section class="hero">
@@ -23,97 +34,112 @@
             <span class="name-word split delay-2">Kenji</span>
           </h1>
 
-          <h2 class="hero-role reveal">Software Engineer · Data & Backend</h2>
+          <h2 class="hero-role reveal">Software Engineer <span class="accent">·</span> Data & Backend</h2>
 
           <p class="hero-description reveal">
             Construo sistemas orientados por dados, conectando engenharia de
-            software, análise técnica e arquitetura backend para gerar impacto
-            real.
+            software, análise técnica e arquitetura backend para gerar impacto real.
           </p>
+        </div>
+        
+        <div class="kanji-samurai sumi-level2">侍</div>
+      </section>
 
-          <div class="kanji-samurai sumi-level2">侍</div>
+      <section class="stack-section reveal">
+        <div class="stack-marquee">
+          <div class="stack-track">
+            <div class="tech-item"><i class="ph ph-coffee"></i> Java</div>
+            <div class="tech-item"><i class="ph ph-leaf"></i> Spring Boot</div>
+            <div class="tech-item"><i class="ph ph-snake"></i> Python</div>
+            <div class="tech-item"><i class="ph ph-database"></i> Oracle</div>
+            <div class="tech-item"><i class="ph ph-docker-logo"></i> Docker</div>
+            <div class="tech-item"><i class="ph ph-git-branch"></i> Git</div>
+            <div class="tech-item"><i class="ph ph-cloud-arrow-up"></i> Azure</div>
+            
+            <div class="tech-item"><i class="ph ph-coffee"></i> Java</div>
+            <div class="tech-item"><i class="ph ph-leaf"></i> Spring Boot</div>
+            <div class="tech-item"><i class="ph ph-snake"></i> Python</div>
+            <div class="tech-item"><i class="ph ph-database"></i> Oracle</div>
+            <div class="tech-item"><i class="ph ph-docker-logo"></i> Docker</div>
+            <div class="tech-item"><i class="ph ph-git-branch"></i> Git</div>
+            <div class="tech-item"><i class="ph ph-cloud-arrow-up"></i> Azure</div>
+          </div>
         </div>
       </section>
 
-      <section class="manifesto section reveal">
-        <p>
+      <section id="work" class="work section reveal">
+        <h2 class="section-title">Projetos Selecionados</h2>
+
+        <div class="projects-grid">
+          <article class="project-card">
+            <div class="card-header">
+                <i class="ph ph-trend-up card-icon"></i>
+                <span class="tech-tag">Data Science</span>
+            </div>
+            
+            <h3>Bitcoin × S&P 500</h3>
+
+            <p>
+              Análise quantitativa da correlação entre o mercado acionário americano e o Bitcoin, utilizando indicadores técnicos.
+            </p>
+
+            <div class="stack-container">
+              <span class="stack-item"><i class="ph ph-snake"></i> Python</span>
+              <span class="stack-item"><i class="ph ph-chart-line-up"></i> Plotly</span>
+              <span class="stack-item"><i class="ph ph-database"></i> Pandas</span>
+            </div>
+
+            <a href="https://github.com/renatosgk/BTC-X-SP500" target="_blank" rel="noopener" class="btn-link">
+              Explorar <i class="ph ph-arrow-right"></i>
+            </a>
+          </article>
+
+          <article class="project-card">
+            <div class="card-header">
+                <i class="ph ph-cloud card-icon"></i>
+                <span class="tech-tag">Backend System</span>
+            </div>
+
+            <h3>LUME</h3>
+
+            <p>
+              Backend para monitoramento de bem-estar emocional com autenticação segura, integração IoT e relatórios.
+            </p>
+
+            <div class="stack-container">
+              <span class="stack-item"><i class="ph ph-coffee"></i> Java</span>
+              <span class="stack-item"><i class="ph ph-leaf"></i> Spring Boot</span>
+              <span class="stack-item"><i class="ph ph-database"></i> Oracle</span>
+            </div>
+
+            <a href="https://github.com/renatosgk/lume" target="_blank" rel="noopener" class="btn-link">
+              Explorar <i class="ph ph-arrow-right"></i>
+            </a>
+          </article>
+        </div>
+      </section>
+
+      <section id="about" class="about section reveal">
+        <h2 class="section-title">Sobre mim</h2>
+
+        <p class="highlight-text">
           Acredito que bons sistemas não são apenas funcionais, mas claros,
           escaláveis e guiados por dados.
         </p>
 
         <p>
-          Meu trabalho conecta engenharia de software, análise técnica e
-          arquitetura backend para transformar informação em impacto.
-        </p>
-      </section>
-
-      <section class="work section reveal">
-        <h2 class="section-title">Projetos selecionados</h2>
-
-        <div class="projects-grid">
-          <article class="project-card">
-            <h3>Bitcoin × S&P 500</h3>
-
-            <p>
-              Projeto de análise quantitativa que investiga a correlação entre o
-              mercado acionário americano e o Bitcoin, utilizando indicadores
-              técnicos e visualizações interativas.
-            </p>
-
-            <span class="stack">
-              Python · Pandas · Pandas_TA · YFinance · Plotly
-            </span>
-
-            <a
-              href="https://github.com/renatosgk/BTC-X-SP500"
-              target="_blank"
-              rel="noopener"
-            >
-              Explorar projeto →
-            </a>
-          </article>
-
-          <article class="project-card">
-            <h3>LUME</h3>
-
-            <p>
-              Sistema backend para monitoramento do bem-estar emocional e físico
-              de trabalhadores, com autenticação segura, integração IoT e
-              geração de relatórios inteligentes.
-            </p>
-
-            <span class="stack">
-              Java · Spring Boot · Oracle · JWT · Swagger · IoT
-            </span>
-
-            <a
-              href="https://github.com/renatosgk/lume"
-              target="_blank"
-              rel="noopener"
-            >
-              Explorar projeto →
-            </a>
-          </article>
-        </div>
-      </section>
-
-      <section class="about section reveal">
-        <h2 class="section-title">Sobre mim</h2>
-
-        <p>
-          Estudante no último semestre de Análise e Desenvolvimento de Sistemas
-          pela FIAP, com base sólida em backend Java/Spring e análise de dados
+          Estudante no último semestre de <strong>Análise e Desenvolvimento de Sistemas
+          pela FIAP</strong>, com base sólida em backend Java/Spring e análise de dados
           com Python.
         </p>
 
         <p>
           Tenho interesse especial em sistemas financeiros, pipelines de dados e
-          arquiteturas que exigem confiabilidade, clareza técnica e impacto
-          real.
+          arquiteturas que exigem confiabilidade, clareza técnica e impacto real.
         </p>
       </section>
 
-      <section class="contact section reveal">
+      <section id="contact" class="contact section reveal">
         <h2 class="section-title">Vamos conversar</h2>
 
         <p class="contact-text">
@@ -122,16 +148,20 @@
         </p>
 
         <div class="contact-links">
-          <a href="https://github.com/renatosgk" target="_blank">GitHub</a>
-          <a
-            href="https://linkedin.com/in/renato-kenji-2643982a4"
-            target="_blank"
-            >LinkedIn</a
-          >
+          <a href="https://github.com/renatosgk" target="_blank">
+            <i class="ph ph-github-logo"></i> GitHub
+          </a>
+          <a href="https://linkedin.com/in/renato-kenji-2643982a4" target="_blank">
+            <i class="ph ph-linkedin-logo"></i> LinkedIn
+          </a>
         </div>
       </section>
-    </main>
 
+      <footer class="footer">
+        <span class="copyright">© 2026 Renato Kenji</span>
+      </footer>
+
+    </main>
     <script src="script.js"></script>
   </body>
 </html>
