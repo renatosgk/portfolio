@@ -4,25 +4,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Renato Kenji • Portfolio</title>
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiIgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIj4KICA8cmVjdCB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHJ4PSI2IiBmaWxsPSIjMGYwZjBmIi8+CiAgPHRleHQgeD0iNTAlIiB5PSI1NCUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiCiAgICBmb250LWZhbWlseT0iJ0dlb3JnaWEnLCBzZXJpZiIgZm9udC1zaXplPSIxMyIgZm9udC13ZWlnaHQ9IjcwMCIKICAgIGxldHRlci1zcGFjaW5nPSIwLjUiIGZpbGw9IiNlOGU4ZTgiPlJLPC90ZXh0Pgo8L3N2Zz4=">
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
-
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div class="parallax-bg"></div>
-    
     <div class="grain"></div>
 
-    <header class ="top-header">
+    <header class="top-header">
       <nav class="nav-menu">
-          <a href="#work" class = "nav-link">projetos</a></li>
-          <a href="#about" class = "nav-link">sobre</a></li>
-          <a href="#contact" class = "nav-link">contato</a></l>
+          <a href="#work" class="nav-link">projetos</a>
+          <a href="#about" class="nav-link">sobre</a>
+          <a href="#contact" class="nav-link">contato</a>
       </nav>
     </header>
 
@@ -33,15 +30,11 @@
             <span class="name-word split delay-1">Renato</span>
             <span class="name-word split delay-2">Kenji</span>
           </h1>
-
           <h2 class="hero-role reveal">Software Engineer <span class="accent">·</span> Data & Backend</h2>
-
           <p class="hero-description reveal">
-            Construo sistemas orientados por dados, conectando engenharia de
-            software, análise técnica e arquitetura backend para gerar impacto real.
+            Construo sistemas orientados por dados, conectando engenharia de software, análise técnica e arquitetura backend para gerar impacto real.
           </p>
         </div>
-        
         <div class="kanji-samurai sumi-level2">侍</div>
       </section>
 
@@ -55,7 +48,6 @@
             <div class="tech-item"><i class="ph ph-docker-logo"></i> Docker</div>
             <div class="tech-item"><i class="ph ph-git-branch"></i> Git</div>
             <div class="tech-item"><i class="ph ph-cloud-arrow-up"></i> Azure</div>
-            
             <div class="tech-item"><i class="ph ph-coffee"></i> Java</div>
             <div class="tech-item"><i class="ph ph-leaf"></i> Spring Boot</div>
             <div class="tech-item"><i class="ph ph-snake"></i> Python</div>
@@ -69,98 +61,78 @@
 
       <section id="work" class="work section reveal">
         <h2 class="section-title">Projetos Selecionados</h2>
-
         <div class="projects-grid">
           <article class="project-card">
-            <div class="card-header">
-                <i class="ph ph-trend-up card-icon"></i>
-                <span class="tech-tag">Data Science</span>
-            </div>
-            
+            <div class="card-header"><i class="ph ph-trend-up card-icon"></i><span class="tech-tag">Data Science</span></div>
             <h3>Bitcoin × S&P 500</h3>
-
-            <p>
-              Análise quantitativa da correlação entre o mercado acionário americano e o Bitcoin, utilizando indicadores técnicos.
-            </p>
-
+            <p>Análise multiativos da correlação entre S&P 500 e Bitcoin, com indicadores técnicos (Ichimoku, EMA 20) e gráficos interativos.</p>
             <div class="stack-container">
               <span class="stack-item"><i class="ph ph-snake"></i> Python</span>
               <span class="stack-item"><i class="ph ph-chart-line-up"></i> Plotly</span>
               <span class="stack-item"><i class="ph ph-database"></i> Pandas</span>
             </div>
-
-            <a href="https://github.com/renatosgk/BTC-X-SP500" target="_blank" rel="noopener" class="btn-link">
-              Explorar <i class="ph ph-arrow-right"></i>
-            </a>
+            <a href="https://github.com/renatosgk/BTC-X-SP500" target="_blank" class="btn-link">Explorar <i class="ph ph-arrow-right"></i></a>
           </article>
 
           <article class="project-card">
-            <div class="card-header">
-                <i class="ph ph-cloud card-icon"></i>
-                <span class="tech-tag">Backend System</span>
-            </div>
-
+            <div class="card-header"><i class="ph ph-cloud card-icon"></i><span class="tech-tag">Backend System</span></div>
             <h3>LUME</h3>
-
-            <p>
-              Backend para monitoramento de bem-estar emocional com autenticação segura, integração IoT e relatórios.
-            </p>
-
+            <p>Backend para monitoramento de bem-estar emocional com autenticação JWT, integração IoT e documentação Swagger.</p>
             <div class="stack-container">
               <span class="stack-item"><i class="ph ph-coffee"></i> Java</span>
               <span class="stack-item"><i class="ph ph-leaf"></i> Spring Boot</span>
+              <span class="stack-item"><i class="ph ph-shield-check"></i> JWT</span>
+            </div>
+            <a href="https://github.com/renatosgk/lume" target="_blank" class="btn-link">Explorar <i class="ph ph-arrow-right"></i></a>
+          </article>
+
+          <article class="project-card">
+            <div class="card-header"><i class="ph ph-gear-six card-icon"></i><span class="tech-tag status-tag">In Progress</span></div>
+            <h3>OsFacil API</h3>
+            <p>Sistema robusto de Ordens de Serviço automotivas. Implementa arquitetura HATEOAS e persistência em Oracle DB.</p>
+            <div class="stack-container">
+              <span class="stack-item"><i class="ph ph-leaf"></i> Spring Boot</span>
+              <span class="stack-item"><i class="ph ph-lock"></i> JWT</span>
               <span class="stack-item"><i class="ph ph-database"></i> Oracle</span>
             </div>
-
-            <a href="https://github.com/renatosgk/lume" target="_blank" rel="noopener" class="btn-link">
-              Explorar <i class="ph ph-arrow-right"></i>
-            </a>
+            <a href="https://github.com/renatosgk/Os-Facil--sprint2" target="_blank" class="btn-link">Explorar <i class="ph ph-arrow-right"></i></a>
           </article>
         </div>
       </section>
 
       <section id="about" class="about section reveal">
         <h2 class="section-title">Sobre mim</h2>
-
-        <p class="highlight-text">
-          Acredito que bons sistemas não são apenas funcionais, mas claros,
-          escaláveis e guiados por dados.
-        </p>
-
-        <p>
-          Estudante no último semestre de <strong>Análise e Desenvolvimento de Sistemas
-          pela FIAP</strong>, com base sólida em backend Java/Spring e análise de dados
-          com Python.
-        </p>
-
-        <p>
-          Tenho interesse especial em sistemas financeiros, pipelines de dados e
-          arquiteturas que exigem confiabilidade, clareza técnica e impacto real.
-        </p>
+        <div class="about-container">
+          <div class="about-image">
+            <img src="foto_projeto.jpg" alt="Renato Kenji" class="profile-photo">
+          </div>
+          <div class="about-text">
+            <p class="highlight-text">
+              Acredito que bons sistemas não são apenas funcionais, mas claros, escaláveis e guiados por dados.
+            </p>
+            <p>
+              Engenheiro de software com foco em backend e dados, construindo sistemas confiáveis com <strong>Java/Spring Boot</strong> e <strong>Python</strong>.
+            </p>
+            <p>
+              Formação em <strong>Análise e Desenvolvimento de Sistemas pela FIAP</strong> (conclusão 2026), com interesse especial em sistemas financeiros e pipelines orientados a dados.
+            </p>
+          </div>
+        </div>
       </section>
 
       <section id="contact" class="contact section reveal">
         <h2 class="section-title">Vamos conversar</h2>
-
-        <p class="contact-text">
-          Se você busca alguém que una engenharia, dados e pensamento sistêmico,
-          fico aberto a boas conversas.
-        </p>
-
+        <p class="contact-text">Se você busca alguém que una engenharia, dados e pensamento sistêmico, fico aberto a boas conversas.</p>
         <div class="contact-links">
-          <a href="https://github.com/renatosgk" target="_blank">
-            <i class="ph ph-github-logo"></i> GitHub
-          </a>
-          <a href="https://linkedin.com/in/renato-kenji-2643982a4" target="_blank">
-            <i class="ph ph-linkedin-logo"></i> LinkedIn
-          </a>
+          <a href="https://github.com/renatosgk" target="_blank"><i class="ph ph-github-logo"></i> GitHub</a>
+          <a href="https://linkedin.com/in/renato-kenji-2643982a4" target="_blank"><i class="ph ph-linkedin-logo"></i> LinkedIn</a>
+          <a href="mailto:renato.k.sgk@gmail.com"><i class="ph ph-envelope"></i> Email</a>
         </div>
       </section>
 
       <footer class="footer">
         <span class="copyright">© 2026 Renato Kenji</span>
       </footer>
-
     </main>
     <script src="script.js"></script>
   </body>
