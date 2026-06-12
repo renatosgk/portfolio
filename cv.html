@@ -1,0 +1,446 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CV — Renato Kenji</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <style>
+    :root {
+      --bg: #f6f4ef;
+      --ink: #1a1a1a;
+      --muted: rgba(26,26,26,0.62);
+      --border: rgba(26,26,26,0.12);
+      --accent: #8c1d18;
+      --font-serif: "Cinzel", serif;
+      --font-sans: "Inter", sans-serif;
+      --font-mono: "JetBrains Mono", monospace;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--font-sans);
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    /* grain */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+      z-index: 100;
+      pointer-events: none;
+    }
+
+    /* ─── LAYOUT ─── */
+    .cv-page {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 3.5rem 5rem;
+    }
+
+    /* ─── ACTIONS (hidden in print) ─── */
+    .cv-actions {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 3rem;
+    }
+
+    .cv-action-btn {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      text-decoration: none;
+      color: var(--ink);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      opacity: 0.55;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      transition: opacity 0.2s, color 0.2s;
+      letter-spacing: 0.05em;
+    }
+    .cv-action-btn:hover { opacity: 1; color: var(--accent); }
+
+    /* ─── HEADER ─── */
+    .cv-header {
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 2rem;
+      margin-bottom: 2.8rem;
+    }
+
+    .cv-name {
+      font-family: var(--font-serif);
+      font-size: clamp(2.2rem, 4vw, 3.2rem);
+      letter-spacing: 0.06em;
+      line-height: 1.1;
+      margin-bottom: 0.5rem;
+    }
+
+    .cv-title {
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--muted);
+      margin-bottom: 1.4rem;
+    }
+
+    .cv-contact {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem 2rem;
+    }
+
+    .cv-contact a,
+    .cv-contact span {
+      font-family: var(--font-mono);
+      font-size: 0.76rem;
+      color: var(--muted);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      letter-spacing: 0.03em;
+    }
+    .cv-contact a:hover { color: var(--accent); }
+    .cv-contact i { font-size: 0.9rem; color: var(--accent); }
+
+    /* ─── SECTION ─── */
+    .cv-section {
+      margin-bottom: 2.6rem;
+    }
+
+    .cv-section-num {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.22em;
+      color: var(--accent);
+      display: block;
+      margin-bottom: 0.35rem;
+    }
+
+    .cv-section-heading {
+      font-family: var(--font-serif);
+      font-size: 1rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      border-left: 2px solid var(--accent);
+      padding-left: 0.8rem;
+      margin-bottom: 1.4rem;
+    }
+
+    /* ─── PERFIL ─── */
+    .cv-profile {
+      font-size: 0.95rem;
+      line-height: 1.75;
+      color: var(--muted);
+      max-width: 680px;
+    }
+
+    /* ─── HABILIDADES ─── */
+    .cv-skills-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.2rem 3rem;
+    }
+
+    .cv-skill-label {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+
+    .cv-skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .cv-skill-tag {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--ink);
+      background: rgba(26,26,26,0.055);
+      padding: 3px 9px;
+      border-radius: 3px;
+      letter-spacing: 0.03em;
+    }
+
+    /* ─── PROJETOS ─── */
+    .cv-project {
+      padding: 1.1rem 0;
+      border-bottom: 1px dashed var(--border);
+    }
+    .cv-project:last-child { border-bottom: none; }
+
+    .cv-project-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 0.35rem;
+    }
+
+    .cv-project-name {
+      font-family: var(--font-serif);
+      font-size: 0.98rem;
+      letter-spacing: 0.05em;
+    }
+
+    .cv-project-tag {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+    }
+
+    .cv-project-desc {
+      font-size: 0.87rem;
+      color: var(--muted);
+      line-height: 1.65;
+      margin-bottom: 0.55rem;
+    }
+
+    .cv-project-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0;
+    }
+
+    .cv-stack-item {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--ink);
+      opacity: 0.6;
+    }
+    .cv-stack-item + .cv-stack-item::before {
+      content: " · ";
+      color: var(--accent);
+      opacity: 1;
+      margin: 0 0.2rem;
+    }
+
+    /* ─── FORMAÇÃO ─── */
+    .cv-edu {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .cv-edu-name {
+      font-family: var(--font-serif);
+      font-size: 0.98rem;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.3rem;
+    }
+
+    .cv-edu-course {
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+
+    .cv-edu-period {
+      font-family: var(--font-mono);
+      font-size: 0.76rem;
+      color: var(--muted);
+      white-space: nowrap;
+      padding-top: 2px;
+    }
+
+    /* ─── PRINT ─── */
+    @media print {
+      .cv-actions { display: none; }
+      body::before { display: none; }
+      .cv-page { padding: 2cm 2.5cm; }
+      html { background: var(--bg); }
+    }
+
+    /* ─── MOBILE ─── */
+    @media (max-width: 700px) {
+      .cv-page { padding: 2rem 1.5rem; }
+      .cv-skills-grid { grid-template-columns: 1fr; }
+      .cv-edu { flex-direction: column; }
+      .cv-project-header { flex-direction: column; gap: 0.2rem; }
+    }
+  </style>
+</head>
+<body>
+  <main class="cv-page">
+
+    <!-- ACTIONS -->
+    <div class="cv-actions">
+      <a href="index.html" class="cv-action-btn">
+        <i class="ph ph-arrow-left"></i> Portfolio
+      </a>
+      <button class="cv-action-btn" onclick="window.print()">
+        <i class="ph ph-download-simple"></i> Exportar PDF
+      </button>
+    </div>
+
+    <!-- HEADER -->
+    <header class="cv-header">
+      <h1 class="cv-name">Renato Kenji</h1>
+      <p class="cv-title">Software Engineer · Data & Backend</p>
+      <div class="cv-contact">
+        <a href="mailto:renato.k.sgk@gmail.com">
+          <i class="ph ph-envelope-simple"></i> renato.k.sgk@gmail.com
+        </a>
+        <a href="https://github.com/renatosgk" target="_blank" rel="noopener noreferrer">
+          <i class="ph ph-github-logo"></i> github.com/renatosgk
+        </a>
+        <a href="https://linkedin.com/in/renato-kenji-2643982a4" target="_blank" rel="noopener noreferrer">
+          <i class="ph ph-linkedin-logo"></i> linkedin.com/in/renato-kenji
+        </a>
+        <span><i class="ph ph-map-pin"></i> São Paulo, SP</span>
+      </div>
+    </header>
+
+    <!-- 01 PERFIL -->
+    <section class="cv-section">
+      <span class="cv-section-num">01</span>
+      <h2 class="cv-section-heading">Perfil</h2>
+      <p class="cv-profile">
+        Backend com Java & Spring Boot. Dados com Python. Estudante de Análise e Desenvolvimento de Sistemas na FIAP (conclusão 2026), buscando primeira oportunidade como desenvolvedor com foco em sistemas backend e pipelines orientados a dados.
+      </p>
+    </section>
+
+    <!-- 02 HABILIDADES -->
+    <section class="cv-section">
+      <span class="cv-section-num">02</span>
+      <h2 class="cv-section-heading">Habilidades</h2>
+      <div class="cv-skills-grid">
+        <div>
+          <p class="cv-skill-label">Linguagens</p>
+          <div class="cv-skill-tags">
+            <span class="cv-skill-tag">Java</span>
+            <span class="cv-skill-tag">Python</span>
+            <span class="cv-skill-tag">C#</span>
+            <span class="cv-skill-tag">TypeScript</span>
+            <span class="cv-skill-tag">SQL</span>
+          </div>
+        </div>
+        <div>
+          <p class="cv-skill-label">Frameworks & Ferramentas</p>
+          <div class="cv-skill-tags">
+            <span class="cv-skill-tag">Spring Boot</span>
+            <span class="cv-skill-tag">Angular</span>
+            <span class="cv-skill-tag">Docker</span>
+            <span class="cv-skill-tag">Git</span>
+            <span class="cv-skill-tag">Azure</span>
+            <span class="cv-skill-tag">RabbitMQ</span>
+            <span class="cv-skill-tag">Swagger</span>
+          </div>
+        </div>
+        <div>
+          <p class="cv-skill-label">Banco de Dados</p>
+          <div class="cv-skill-tags">
+            <span class="cv-skill-tag">Oracle DB</span>
+            <span class="cv-skill-tag">SQL</span>
+          </div>
+        </div>
+        <div>
+          <p class="cv-skill-label">Conceitos</p>
+          <div class="cv-skill-tags">
+            <span class="cv-skill-tag">REST API</span>
+            <span class="cv-skill-tag">JWT</span>
+            <span class="cv-skill-tag">HATEOAS</span>
+            <span class="cv-skill-tag">IoT</span>
+            <span class="cv-skill-tag">Machine Learning</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 PROJETOS -->
+    <section class="cv-section">
+      <span class="cv-section-num">03</span>
+      <h2 class="cv-section-heading">Projetos</h2>
+
+      <div class="cv-project">
+        <div class="cv-project-header">
+          <span class="cv-project-name">OrbitX</span>
+          <span class="cv-project-tag">Enterprise · AI</span>
+        </div>
+        <p class="cv-project-desc">Plataforma enterprise de monitoramento de datacenters sustentáveis com IA. Rastreamento orbital de satélites, alertas em tempo real e previsão de superaquecimento via LLaMA/Groq.</p>
+        <div class="cv-project-stack">
+          <span class="cv-stack-item">Java</span>
+          <span class="cv-stack-item">Spring Boot</span>
+          <span class="cv-stack-item">Oracle</span>
+          <span class="cv-stack-item">RabbitMQ</span>
+          <span class="cv-stack-item">LLaMA / Groq</span>
+        </div>
+      </div>
+
+      <div class="cv-project">
+        <div class="cv-project-header">
+          <span class="cv-project-name">Bitcoin × S&amp;P 500</span>
+          <span class="cv-project-tag">Data Science</span>
+        </div>
+        <p class="cv-project-desc">Análise multiativos da correlação entre S&amp;P 500 e Bitcoin, com indicadores técnicos (Ichimoku, EMA 20) e gráficos interativos.</p>
+        <div class="cv-project-stack">
+          <span class="cv-stack-item">Python</span>
+          <span class="cv-stack-item">Plotly</span>
+          <span class="cv-stack-item">Pandas</span>
+        </div>
+      </div>
+
+      <div class="cv-project">
+        <div class="cv-project-header">
+          <span class="cv-project-name">LUME</span>
+          <span class="cv-project-tag">Backend System</span>
+        </div>
+        <p class="cv-project-desc">API REST com autenticação JWT, integração IoT e documentação OpenAPI. Foco em segurança e testabilidade.</p>
+        <div class="cv-project-stack">
+          <span class="cv-stack-item">Java</span>
+          <span class="cv-stack-item">Spring Boot</span>
+          <span class="cv-stack-item">JWT</span>
+        </div>
+      </div>
+
+      <div class="cv-project">
+        <div class="cv-project-header">
+          <span class="cv-project-name">OsFacil API</span>
+          <span class="cv-project-tag">Backend API</span>
+        </div>
+        <p class="cv-project-desc">API HATEOAS com Spring Boot e Oracle. Controle de acesso por roles, persistência relacional e documentação Swagger.</p>
+        <div class="cv-project-stack">
+          <span class="cv-stack-item">Spring Boot</span>
+          <span class="cv-stack-item">JWT</span>
+          <span class="cv-stack-item">Oracle</span>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- 04 FORMAÇÃO -->
+    <section class="cv-section">
+      <span class="cv-section-num">04</span>
+      <h2 class="cv-section-heading">Formação</h2>
+      <div class="cv-edu">
+        <div>
+          <p class="cv-edu-name">FIAP — Faculdade de Informática e Administração Paulista</p>
+          <p class="cv-edu-course">Análise e Desenvolvimento de Sistemas</p>
+        </div>
+        <p class="cv-edu-period">2024 – 2026</p>
+      </div>
+    </section>
+
+  </main>
+</body>
+</html>
